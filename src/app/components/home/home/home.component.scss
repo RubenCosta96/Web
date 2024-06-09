@@ -1,0 +1,66 @@
+// .carousel-item img {
+//   height: 600px;
+//   width: 100%;
+//   object-fit: cover;
+// }
+.carousel-item {
+  position: relative; // Ensure that the carousel item is positioned relatively
+
+  img {
+    height: 700px; // Set the height of the carousel images
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text contrast */
+    z-index: 1;
+  }
+}
+
+.carousel-item img {
+  height: 100vh;
+  width: 100%;
+  object-fit: cover;
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  text-align: center;
+  color: white;
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+p {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 1rem;
+  color: white;
+  background-color: #ff6200; /* Bright color for the button */
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #e55a00; /* Slightly darker shade on hover */
+}

@@ -1,0 +1,11 @@
+<!-- <ul>
+  <li *ngFor="let museu of museus">
+    <a [routerLink]="['/museums', museu.$key]">{{ museu.nome }}</a>
+  </li>
+</ul> -->
+
+<ul *ngIf="this.museums">
+  <li *ngFor="let museum of museums">
+    <p>{{ museum.name }}</p>
+  </li>
+</ul>

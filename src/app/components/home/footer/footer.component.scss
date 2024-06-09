@@ -1,0 +1,36 @@
+footer {
+  background-color: #0a0a0a; /* Darker blue-gray background */
+  color: #ecf0f1; /* Light text color */
+  padding: 2rem 0; /* Padding for top and bottom */
+}
+
+footer h5 {
+  color: #ecf0f1; /* Light color for the headings */
+}
+
+footer p,
+footer .nav-link {
+  color: #ecf0f1; /* Light color for the text and links */
+}
+
+footer .nav-link:hover {
+  color: #ffffff; /* White color for links on hover */
+}
+
+footer .btn-primary {
+  background-color: #2980b9; /* Blue background color of the button */
+  border-color: #2980b9; /* Border color of the button */
+}
+
+footer .btn-primary:hover {
+  background-color: #1c5985; /* Darker blue background color of the button on hover */
+  border-color: #1c5985; /* Darker blue border color of the button on hover */
+}
+
+footer .list-unstyled .link-light {
+  color: #ecf0f1; /* Light color for social media icons */
+}
+
+footer .list-unstyled .link-light:hover {
+  color: #ffffff; /* White color for social media icons on hover */
+}

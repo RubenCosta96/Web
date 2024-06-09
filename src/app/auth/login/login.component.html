@@ -1,0 +1,47 @@
+<div class="login">
+  <div class="login-container">
+    <form [formGroup]="loginForm" (ngSubmit)="onFormSubmit()">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          formControlName="email"
+          [class.invalid]="isFieldInvalid('email')"
+        />
+        <div *ngIf="isFieldInvalid('email')" class="error-message">
+          Email Inválido
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          formControlName="password"
+          [class.invalid]="isFieldInvalid('password')"
+        />
+        <div class="show-password-container">
+          <label class="show-password-label">
+            Mostrar Password
+            <input
+              class="show-password"
+              type="checkbox"
+              (click)="showPassword()"
+            />
+          </label>
+        </div>
+        <div *ngIf="isFieldInvalid('password')" class="error-message">
+          Password Inválida
+        </div>
+      </div>
+      <button type="submit">Login</button>
+    </form>
+    <div class="create-account-option">
+      <p>
+        Ainda não tem conta?
+        <a routerLink="/registo">Criar conta</a>
+      </p>
+    </div>
+  </div>
+</div>
