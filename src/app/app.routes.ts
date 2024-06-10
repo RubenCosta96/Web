@@ -17,5 +17,6 @@ export const routes: Routes = [
   { path: 'registo', component: RegistoComponent },
   { path: 'gallery', component: GalleryComponent },
   { path: 'museums-catalog', component: MuseumsCatalogComponent },
-  { path: 'pieces-catalog', component: PiecesCatalogComponent },
+  { path: 'pieces-catalog/:museumId', component: PiecesCatalogComponent },
 ];
+

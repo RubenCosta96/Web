@@ -6,6 +6,16 @@
 
 <ul *ngIf="this.museums">
   <li *ngFor="let museum of museums">
-    <p>{{ museum.name }}</p>
+    <div>
+      <p>{{ museum.name }}</p>
+      <img [src]="museum.images[0]" alt="{{ museum.name }}">
+      <button [routerLink]="['/pieces-catalog/' + museum.key]">Open</button>
+    </div>
   </li>
 </ul>
+
+
+
+    <!-- <div *ngFor="let img1 of museum.images">
+      <img [src]="img1" alt="{{ museum.name }}">
+    </div> -->

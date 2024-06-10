@@ -73,6 +73,10 @@ export class LoginComponent {
       this.service
         .login(this.user.email, this.user.password)
         .then((credential) => {
+          
+          let token = credential.user?.accessToken
+          localStorage.setItem('token', token);
+          
           let email =
             credential.user.email != null ? credential.user.email.trim() : '';
 

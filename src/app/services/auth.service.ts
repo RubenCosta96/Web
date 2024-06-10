@@ -37,7 +37,8 @@ export class AuthService {
     }
   }
   // Método para login do usuário
-  login(email: string, password: string): Promise<UserCredential> {
+  // login(email: string, password: string): Promise<UserCredential> {
+  login(email: string, password: string): Promise<any> {
     try {
       return signInWithEmailAndPassword(
         this.auth,
@@ -56,6 +57,8 @@ export class AuthService {
       .signOut()
       .then(() => {
         // Logout successful
+        // localStorage.removeItem('userEmail');
+        localStorage.clear()
         console.log('Logged out');
       })
       .catch((error) => {

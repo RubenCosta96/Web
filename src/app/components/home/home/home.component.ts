@@ -23,10 +23,14 @@ export class HomeComponent {
     if (localStorage) {
       this.email = localStorage.getItem('userEmail') ?? '';
 
-      if (this.email === '') {
-        localStorage.setItem('userEmail', '');
-      }
+      // if (this.email === '') {
+      //   localStorage.setItem('userEmail', '');
+      // }
     }
+  }
+
+  ngOnInit() {
+    console.log(JSON.parse(atob(localStorage.getItem('token').replace('"', '').replace('"', '').split('.')[1])))
   }
 
   logout() {
