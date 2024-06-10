@@ -1,3 +1,4 @@
+import { PiecesCatalogComponent } from './components/pieces-catalog/pieces-catalog.component';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { DataTablesModule } from 'angular-datatables';
@@ -17,6 +18,7 @@ import { Firestore } from '@angular/fire/firestore';
     FooterComponent,
     HomeComponent,
     GalleryComponent,
+    PiecesCatalogComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

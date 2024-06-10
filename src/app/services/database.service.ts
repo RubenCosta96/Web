@@ -47,4 +47,27 @@ export class DatabaseService {
 
     return aux1;
   }
+
+  // async getAllPiecesByMuseum(museumName) {
+  //   let data = collection(this.db, 'museums');
+  //   let aux = await getDocs(data);
+
+  //   let aux1 = await aux.docs.map((doc) => {
+  //     const data = doc.data();
+  //     const key = doc.id;
+  //     return { key, ...data };
+  //   });
+    
+  //   let aux2 = await aux.docs.map((doc) => {
+  //     const data = doc.data();
+  //     const key = doc.id;
+  //     return{key, ...data};
+  //   });
+  //   console.log(aux1);
+  //   console.log(aux);
+
+  //   return aux1;
+  // }
+
+
 }
