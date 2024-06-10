@@ -7,6 +7,7 @@ import {
   getDocs,
   collection,
 } from '@angular/fire/firestore';
+import { resolve } from 'node:path';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -44,30 +45,28 @@ export class DatabaseService {
     });
 
     console.log(aux1);
+    console.log(aux);
 
     return aux1;
   }
 
-  // async getAllPiecesByMuseum(museumName) {
-  //   let data = collection(this.db, 'museums');
-  //   let aux = await getDocs(data);
+  async getAllPiecesByMuseum() {
+    let data = collection(this.db, 'museums');
+    let aux = await getDocs(data);
 
-  //   let aux1 = await aux.docs.map((doc) => {
-  //     const data = doc.data();
-  //     const key = doc.id;
-  //     return { key, ...data };
-  //   });
-    
-  //   let aux2 = await aux.docs.map((doc) => {
-  //     const data = doc.data();
-  //     const key = doc.id;
-  //     return{key, ...data};
-  //   });
-  //   console.log(aux1);
-  //   console.log(aux);
+    let aux1 = await aux.docs.map((doc) => {
+      const data = doc.data();
+      const key = doc.id;
+      return { key, ...data };
+    });
 
-  //   return aux1;
-  // }
+    let teste = 
+
+    console.log(aux1);
+    console.log(aux);
+
+    return aux1;
+  }
 
 
 }

@@ -11,10 +11,9 @@ import { DatabaseService } from '../../services/database.service';
 export class PiecesCatalogComponent {
   constructor(private databaseService: DatabaseService) {}
 
-  // pieces;
-
-  // async ngOnInit() {
-  //   this.pieces = await this.databaseService.getAllPiecesByMuseum();
-  //   console.log(this.pieces);
-  // }
+  pieces;
+  async ngoninit() {
+    this.pieces = await this.databaseService.getAllPiecesByMuseum();
+    console.log(this.pieces);
+  }
 }
