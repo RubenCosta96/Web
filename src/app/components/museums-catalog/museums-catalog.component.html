@@ -1,4 +1,14 @@
-@if(this.museums){
+<div class="cards">
+  <div class="card" *ngFor="let museum of museums">
+    <h4>{{ museum.name }}</h4>
+    <img [src]="museum.images[0]" alt="" />
+    <button class="btn-open-museum">
+      <a href="#">Abrir Museu</a>
+    </button>
+  </div>
+</div>
+
+<!-- @if(this.museums){
 <div class="museum-container" *ngFor="let museum of museums">
   <h2>{{ museum.name }}</h2>
   <div class="museum-images">
@@ -10,34 +20,7 @@
 <section class="history">
   <h3>História</h3>
   <p id="text-history">
-    O novo Museu dos Coches surge em Belém como um equipamento cultural mas
-    também como um lugar público. Nas palavras do arquiteto Paulo Mendes da
-    Rocha “o museu não tem porta e relaciona-se para todos os lados”. Mais que
-    um museu, o projeto funciona como uma infraestrutura urbana, que oferece
-    ‘espaço público’ à cidade. Convergiram assim duas preocupações, por um lado
-    a necessidade imperativa de aumentar a área expositiva do museu assim como a
-    sua infraestrutura técnica de apoio, mas também a indispensabilidade de
-    criar novas valências para o público daquele que é o museu mais visitado do
-    país. Por outro lado, contou a necessidade de realizar o remate daquela que
-    é uma das mais importantes frentes urbanas de Lisboa, a zona monumental de
-    Belém, tendo a construção do novo edifício incentivado uma nova dinâmica do
-    território envolvente ao museu, criando novos espaços públicos e percursos
-    na cidade que evocam anteriores vivências. O novo edifício do Museu dos
-    Coches é constituído por um pavilhão principal com uma nave suspensa e um
-    anexo, com uma ligação aérea, que assegura a circulação entre os dois
-    edifícios. A disposição espacial destes corpos cria uma espécie de pórtico
-    que aponta para uma praça interna, para onde também se viram as construções
-    antigas da Rua da Junqueira. O novo Museu inclui espaços para exposição
-    permanente e temporária, áreas de reservas e uma oficina de conservação e
-    restauro que contribuirá para o desenvolvimento da conservação e restauro
-    deste tipo de património. Foram concebidos novos espaços destinados, à
-    Biblioteca, ao Arquivo assim como um Auditório que potencia a realização de
-    um conjunto de atividades culturais que vêm engrandecer a programação
-    pública do museu. Para acolhimento dos visitantes foram programados espaços
-    de restauração, uma Loja do Museu e um Posto de Informação Turística.
-    Finalmente devem ser mencionadas as áreas envolventes do novo edifício,
-    designadamente a Praça do Museu uma zona de acesso livre e que se constitui
-    também, como um lugar de passeio e lazer público.
+    Historia --
   </p>
   <button class="btn-speak" (click)="toggleSpeak()">Ouvir Texto</button>
 </section>
@@ -50,4 +33,4 @@
   loading="lazy"
   referrerpolicy="no-referrer-when-downgrade"
 ></iframe>
-}
+} -->

@@ -36,7 +36,6 @@ export class DatabaseService {
   async getAll() {
     let data = collection(this.db, 'museums');
     let aux = await getDocs(data);
-
     let aux1 = await aux.docs.map((doc) => {
       const data = doc.data();
       const key = doc.id;
