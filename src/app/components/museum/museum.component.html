@@ -2,11 +2,21 @@
   <div class="museum-image">
     <img src="{{ museum.images[0] }}" alt="Imagem" />
   </div>
+  <button class="btn-open-gallery">Galeria</button>
   <section class="museum-history">
     <h2>História do Museu</h2>
     <div id="museum-history-text">
-      <!-- <p>{{ museum.history - pt }}</p> -->
+      <p>{{ museum.history_pt }}</p>
       <button class="btn-speak" (click)="toggleSpeak()">Ouvir Texto</button>
     </div>
   </section>
+  <br />
+  <div class="evaluations">
+    <h3>Avaliações</h3>
+    <div class="eval-cards">
+      <div class="eval-card" *ngFor="let evaluation of evaluations">
+        <p>{{ evaluation.description }}</p>
+      </div>
+    </div>
+  </div>
 </div>

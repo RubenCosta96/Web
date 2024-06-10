@@ -1,23 +1,31 @@
 import { Component } from '@angular/core';
 import { DatabaseService } from '../../services/database.service';
 import { ActivatedRoute } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-museum',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './museum.component.html',
   styleUrl: './museum.component.scss',
 })
 export class MuseumComponent {
-  constructor(private databaseService: DatabaseService, private activeRoute : ActivatedRoute) {}
+  constructor(
+    private databaseService: DatabaseService,
+    private activeRoute: ActivatedRoute
+  ) {}
 
   museum;
   evaluations;
 
   async ngOnInit() {
-    this.museum = await this.databaseService.getMuseumById(this.activeRoute.snapshot.params['museumId']);
-    this.evaluations = await this.databaseService.getAllEvaluationsByMuseum(this.activeRoute.snapshot.params['museumId']);
+    this.museum = await this.databaseService.getMuseumById(
+      this.activeRoute.snapshot.params['museumId']
+    );
+    this.evaluations = await this.databaseService.getAllEvaluationsByMuseum(
+      this.activeRoute.snapshot.params['museumId']
+    );
     console.log(this.museum);
     console.log(this.evaluations);
   }
@@ -31,7 +39,6 @@ export class MuseumComponent {
       var speech = new SpeechSynthesisUtterance(text);
       window.speechSynthesis.speak(speech);
       document.querySelector('.btn-speak').textContent = 'Parar de Ouvir';
-    } 
+    }
   }
-
 }
