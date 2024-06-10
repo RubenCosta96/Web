@@ -36,10 +36,32 @@ export class MuseumComponent {
       window.speechSynthesis.cancel();
       document.querySelector('.btn-speak').textContent = 'Ouvir Texto';
     } else {
-      var text = document.getElementById('museum-history-text').innerText;
+      var text = document.getElementById('history-text').innerText;
       var speech = new SpeechSynthesisUtterance(text);
       window.speechSynthesis.speak(speech);
       document.querySelector('.btn-speak').textContent = 'Parar de Ouvir';
+    }
+  }
+
+  changeLanguage() {
+    let historyText = document.getElementById('history-text').innerText;
+    let museumHistory = this.museum.history_pt;
+
+    historyText = historyText.trim().toLowerCase().normalize();
+    museumHistory = museumHistory.trim().toLowerCase().normalize();
+
+    historyText = historyText.replace(/\s+/g, ' ');
+    museumHistory = museumHistory.replace(/\s+/g, ' ');
+
+    if (historyText == museumHistory) {
+      document.getElementById('history-text').innerText =
+        this.museum.history_en;
+      document.getElementById('languageButton').innerText =
+        'Trocar para Português';
+    } else {
+      document.getElementById('history-text').innerText =
+        this.museum.history_pt;
+      document.getElementById('languageButton').innerText = 'Switch to English';
     }
   }
 }

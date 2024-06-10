@@ -58,7 +58,7 @@ export class AuthService {
       .then(() => {
         // Logout successful
         // localStorage.removeItem('userEmail');
-        localStorage.clear()
+        localStorage.clear();
         console.log('Logged out');
       })
       .catch((error) => {

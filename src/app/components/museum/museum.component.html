@@ -14,9 +14,12 @@
 <section class="museum-history">
   <div class="wrapper">
     <h2>História do Museu</h2>
-    <div id="museum-history-text">
-      <p>{{ museum.history_pt }}</p>
+    <div id="history">
+      <p id="history-text">{{ museum.history_pt }}</p>
       <button class="btn-speak" (click)="toggleSpeak()">Ouvir Texto</button>
+      <button class="btn-lang" id="languageButton" (click)="changeLanguage()">
+        Switch to English
+      </button>
     </div>
   </div>
 </section>
