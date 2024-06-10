@@ -3,12 +3,15 @@
     <div class="museum-image">
       <img src="{{ museum.images[0] }}" alt="Imagem" />
     </div>
-    <button
-      class="btn-open-gallery"
-      [routerLink]="['/pieces-catalog/' + museum.key]"
-    >
-      Galeria
-    </button>
+    <div class="buttons">
+      <a [href]="museum.tickets" target="_blank" class="button">Bilhetes</a>
+      <button
+        class="btn-open-gallery"
+        [routerLink]="['/pieces-catalog/' + museum.key]"
+        >
+        Galeria
+      </button>
+    </div>
   </div>
 </section>
 <section class="museum-history">
