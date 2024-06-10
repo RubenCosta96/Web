@@ -29,8 +29,9 @@
     <h3>Avaliações</h3>
     <div class="eval-cards">
       <div class="eval-card" *ngFor="let evaluation of evaluations">
-        <p> Descriçao: {{ evaluation.description }} </p>
-        <p> Avaliação: {{ evaluation.rating }} /10</p>
+        <p><b>Utilizador:</b> {{ evaluation.userName }}</p>
+        <p><b>Descriçao:</b> {{ evaluation.description }}</p>
+        <p><b>Avaliação:</b> {{ evaluation.rating }} /10 &#11088;</p>
       </div>
     </div>
   </div>
