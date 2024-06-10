@@ -1,1 +1,12 @@
-<p>museum works!</p>
+<div class="museum-container">
+  <div class="museum-image">
+    <img src="{{ museum.image[0] }}" alt="Imagem" />
+  </div>
+  <section class="museum-history">
+    <h2>História do Museu</h2>
+    <div id="museum-history-text">
+      <p>{{ museum.history - pt }}</p>
+      <button class="btn-speak" (click)="toggleSpeak()">Ouvir Texto</button>
+    </div>
+  </section>
+</div>

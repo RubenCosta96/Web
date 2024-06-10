@@ -7,7 +7,7 @@ import { ActivatedRoute } from '@angular/router';
   standalone: true,
   imports: [],
   templateUrl: './museum.component.html',
-  styleUrl: './museum.component.scss'
+  styleUrl: './museum.component.scss',
 })
 export class MuseumComponent {
   constructor(private databaseService: DatabaseService, private activeRoute : ActivatedRoute) {}
@@ -18,4 +18,17 @@ export class MuseumComponent {
     this.museum = await this.databaseService.getMuseumById(this.activeRoute.snapshot.params['museumId']);
     console.log(this.museum);
   }
+
+  toggleSpeak() {
+    if (window.speechSynthesis.speaking) {
+      window.speechSynthesis.cancel();
+      document.querySelector('.btn-speak').textContent = 'Ouvir Texto';
+    } else {
+      var text = document.getElementById('museum-history-text').innerText;
+      var speech = new SpeechSynthesisUtterance(text);
+      window.speechSynthesis.speak(speech);
+      document.querySelector('.btn-speak').textContent = 'Parar de Ouvir';
+    } 
+  }
+  
 }
