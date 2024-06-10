@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { DatabaseService } from '../../services/database.service';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-museum',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './museum.component.html',
   styleUrl: './museum.component.scss',
 })

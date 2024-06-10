@@ -2,7 +2,12 @@
   <div class="museum-image">
     <img src="{{ museum.images[0] }}" alt="Imagem" />
   </div>
-  <button class="btn-open-gallery">Galeria</button>
+  <button
+    class="btn-open-gallery"
+    [routerLink]="['/pieces-catalog/' + museum.key]"
+  >
+    Galeria
+  </button>
   <section class="museum-history">
     <h2>História do Museu</h2>
     <div id="museum-history-text">
