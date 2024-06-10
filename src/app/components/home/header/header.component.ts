@@ -41,6 +41,7 @@ export class HeaderComponent implements OnInit {
   }
 
   isNotHome(): boolean {
+    console.log(this.router.url);
     return this.router.url !== '/home' && this.router.url !== '/';
   }
 }
