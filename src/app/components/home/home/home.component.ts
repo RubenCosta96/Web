@@ -29,9 +29,19 @@ export class HomeComponent {
     }
   }
 
-  ngOnInit() {
-    console.log(JSON.parse(atob(localStorage.getItem('token').replace('"', '').replace('"', '').split('.')[1])))
-  }
+  // ngOnInit() {
+  //   console.log(
+  //     JSON.parse(
+  //       atob(
+  //         localStorage
+  //           .getItem('token')
+  //           .replace('"', '')
+  //           .replace('"', '')
+  //           .split('.')[1]
+  //       )
+  //     )
+  //   );
+  // }
 
   logout() {
     const localStorage = this.document.defaultView?.localStorage;

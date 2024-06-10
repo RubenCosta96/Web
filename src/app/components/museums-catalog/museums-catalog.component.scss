@@ -26,6 +26,8 @@ $label-color: #999;
 
 img {
   border-radius: 5px;
+  height: 100%;
+  object-fit: cover;
 }
 .title {
   color: grey;
