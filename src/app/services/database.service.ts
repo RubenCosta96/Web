@@ -42,9 +42,26 @@ export class DatabaseService {
       const key = doc.id;
       return { key, ...data };
     });
-
     console.log(aux1);
-
     return aux1;
+  }
+
+  async getAllPieces() {
+    const museumsCollectionRef = collection(this.db, 'museums');
+    const museumsSnapshot = await getDocs(museumsCollectionRef);
+    const piecesList = await Promise.all(
+      museumsSnapshot.docs.map(async (doc) => {
+        const piecesCollectionRef = collection(doc.ref, 'pieces');
+        const piecesSnapshot = await getDocs(piecesCollectionRef);
+        return piecesSnapshot.docs.map((pieceDoc) => ({
+          museumId: doc.id,
+          id: pieceDoc.id,
+          ...pieceDoc.data(),
+        }));
+      })
+    );
+    const flattenedPiecesList = piecesList.flat();
+    console.log(flattenedPiecesList);
+    return flattenedPiecesList;
   }
 }

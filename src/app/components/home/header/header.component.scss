@@ -1,10 +1,9 @@
-// Estilos para a barra de navegação
 .navbar {
-  background-color: transparent; // Change the background color to transparent
   box-shadow: none;
   position: absolute;
-  width: 100%; // Garante que a barra de navegação ocupe toda a largura da tela
-  z-index: 2; // Garante que a barra de navegação esteja acima de outros elementos
+  width: 100%;
+  z-index: 2;
+  color: #1a1a1a;
 
   .navbar-brand img {
     margin-left: 10px;
@@ -12,7 +11,6 @@
     transition: transform 0.3s ease;
   }
 
-  // Logotipo com efeito de escala ao passar o cursor
   .navbar-brand img:hover {
     transform: scale(1.1);
   }
@@ -25,11 +23,9 @@
   }
 }
 
-// Estilos para o botão de alternância em dispositivos móveis
 .navbar-toggler {
-  border-color: transparent; // Remove a borda do botão de alternância
+  border-color: transparent;
   .navbar-toggler-icon {
-    // Estilos para o ícone do botão de alternância
-    background-color: #333; // Cor do ícone do botão de alternância
+    background-color: #333;
   }
 }

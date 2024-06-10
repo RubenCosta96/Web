@@ -25,6 +25,7 @@ export class HeaderComponent implements OnInit {
     this.router.events.subscribe((event) => {
       let status = this.router.url.includes(route);
       this.hidenLogin = status;
+      console.log(status);
     });
   }
 
@@ -38,5 +39,9 @@ export class HeaderComponent implements OnInit {
     this.authService.logout();
     this.isLoggedIn = false;
     window.location.href = '/login';
+  }
+
+  isNotHome(): boolean {
+    return this.router.url !== '/home' && this.router.url !== '/';
   }
 }
