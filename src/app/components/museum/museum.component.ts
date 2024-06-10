@@ -13,10 +13,13 @@ export class MuseumComponent {
   constructor(private databaseService: DatabaseService, private activeRoute : ActivatedRoute) {}
 
   museum;
+  evaluations;
 
   async ngOnInit() {
     this.museum = await this.databaseService.getMuseumById(this.activeRoute.snapshot.params['museumId']);
+    this.evaluations = await this.databaseService.getAllEvaluationsByMuseum(this.activeRoute.snapshot.params['museumId']);
     console.log(this.museum);
+    console.log(this.evaluations);
   }
 
   toggleSpeak() {
@@ -30,5 +33,5 @@ export class MuseumComponent {
       document.querySelector('.btn-speak').textContent = 'Parar de Ouvir';
     } 
   }
-  
+
 }
