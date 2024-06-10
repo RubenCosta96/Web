@@ -6,6 +6,7 @@ import {
   addDoc,
   getDocs,
   collection,
+  getDoc,
 } from '@angular/fire/firestore';
 import { resolve } from 'node:path';
 import { Observable } from 'rxjs';
@@ -49,9 +50,9 @@ export class DatabaseService {
 
     return aux1;
   }
-
+  
   async getMuseumById(museumId: string) {
-    let data = collection(this.db, 'museums', museumId);
+    let data = collection(this.db, 'museums');
     let aux = await getDocs(data);
 
     let aux1 = await aux.docs.map((doc) => {
@@ -59,10 +60,12 @@ export class DatabaseService {
       const key = doc.id;
       return { key, ...data };
     });
-    console.log(aux1);
-    return aux1;
-  }
 
+    let select = aux1.find(item => item.key === museumId);
+
+    console.log(select);
+    return select;
+  }
 
   async getAllPiecesByMuseum(museumId: string) {   
     if (museumId.length === 0) {
