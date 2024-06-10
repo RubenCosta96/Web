@@ -109,4 +109,24 @@ export class DatabaseService {
     return evaluations;
   }
 
+  async getAllEventsByMuseum(museumId: string) {   
+    if (museumId.length === 0) {
+      throw new Error(`Museum with id ${museumId} not found`);
+    }
+
+    // Acessar a subcoleção 'pieces' do documento do museu
+    let eventsColection = collection(this.db, `museums/${museumId}/events`);
+    let piecesSnapshot = await getDocs(eventsColection);
+
+    // Mapear os documentos da subcoleção 'pieces'
+    let events = piecesSnapshot.docs.map((doc) => {
+      const data = doc.data();
+      const key = doc.id;
+      return { key, ...data };
+    });
+
+    console.log(events);
+
+    return events;
+  }
 }

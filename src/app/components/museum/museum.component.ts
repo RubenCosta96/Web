@@ -19,6 +19,7 @@ export class MuseumComponent {
 
   museum;
   evaluations;
+  events;
 
   async ngOnInit() {
     this.museum = await this.databaseService.getMuseumById(
@@ -27,8 +28,12 @@ export class MuseumComponent {
     this.evaluations = await this.databaseService.getAllEvaluationsByMuseum(
       this.activeRoute.snapshot.params['museumId']
     );
+    this.events = await this.databaseService.getAllEventsByMuseum(
+      this.activeRoute.snapshot.params['museumId']
+    );
     console.log(this.museum);
     console.log(this.evaluations);
+    console.log(this.events);
   }
 
   toggleSpeak() {

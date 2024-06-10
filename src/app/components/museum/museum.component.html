@@ -34,4 +34,14 @@
       </div>
     </div>
   </div>
+  <section class="evaluations">
+    <div class="wrapper">
+      <h3>Eventos</h3>
+      <div class="eval-cards">
+        <div class="eval-card" *ngFor="let ev of events">
+          <p> Descriçao: {{ ev.description }} </p>
+          <p> Horario: {{ ev.schedule }}</p>
+        </div>
+      </div>
+    </div>
 </section>
