@@ -50,35 +50,7 @@ export class DatabaseService {
     return aux1;
   }
 
-  // async getAllPiecesByMuseum() {
-  //   let data = collection(this.db, 'museums');
-  //   let aux = await getDocs(data);
-    
-  //   let filterData = aux.docs.filter((doc) => doc.data()['name'] === 'Museu Nacional dos Coches');
-
-  //   filterData.forEach((doc) => {
-  //     const data = doc.data();
-  //     const key = doc.id;
-  //   });
-
-  //   let pieces = filterData.map((doc) => {
-  //     const data = doc.data();
-  //     const key = doc.id;
-  //     return {key, ...data};
-  //   });
-
-  //   console.log(pieces);
-  //   return pieces;
-  // }
-  async getAllPiecesByMuseum(museumId: string) {
-    // Obter a coleção 'museums'
-    let museumsCollection = collection(this.db, 'museums');
-    let museumsSnapshot = await getDocs(museumsCollection);
-
-    // Filtrar documentos pelo nome do museu
-    // let filteredDocs = museumsSnapshot.docs.filter((doc) => doc.data()['name'] === museumName);
-    
-
+  async getAllPiecesByMuseum(museumId: string) {   
     if (museumId.length === 0) {
       throw new Error(`Museum with id ${museumId} not found`);
     }

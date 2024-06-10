@@ -39,4 +39,8 @@ export class HeaderComponent implements OnInit {
     this.isLoggedIn = false;
     window.location.href = '/login';
   }
+
+  isNotHome(): boolean {
+    return this.router.url !== '/home' && this.router.url !== '/';
+  }
 }

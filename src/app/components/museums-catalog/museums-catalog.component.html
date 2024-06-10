@@ -1,10 +1,18 @@
-<!-- <ul>
-  <li *ngFor="let museu of museus">
-    <a [routerLink]="['/museums', museu.$key]">{{ museu.nome }}</a>
-  </li>
-</ul> -->
+<div class="cards">
+  <div class="card" *ngFor="let museum of museums">
+    <h4>{{ museum.name }}</h4>
+    <img [src]="museum.images[0]" alt="" />
+    <button class="btn-open-museum">
+      <a href="#">Abrir Museu</a>
+    </button>
+  </div>
+</div>
 
-<ul *ngIf="this.museums">
+
+
+
+<!-- Codigo Teste -->
+<!-- <ul *ngIf="this.museums">
   <li *ngFor="let museum of museums">
     <div>
       <p>{{ museum.name }}</p>
@@ -12,10 +20,7 @@
       <button [routerLink]="['/pieces-catalog/' + museum.key]">Open</button>
     </div>
   </li>
-</ul>
-
-
-
-    <!-- <div *ngFor="let img1 of museum.images">
-      <img [src]="img1" alt="{{ museum.name }}">
-    </div> -->
+</ul> -->
+  <!-- <div *ngFor="let img1 of museum.images">
+    <img [src]="img1" alt="{{ museum.name }}">
+  </div> -->
