@@ -50,6 +50,20 @@ export class DatabaseService {
     return aux1;
   }
 
+  async getMuseumById(museumId: string) {
+    let data = collection(this.db, 'museums', museumId);
+    let aux = await getDocs(data);
+
+    let aux1 = await aux.docs.map((doc) => {
+      const data = doc.data();
+      const key = doc.id;
+      return { key, ...data };
+    });
+    console.log(aux1);
+    return aux1;
+  }
+
+
   async getAllPiecesByMuseum(museumId: string) {   
     if (museumId.length === 0) {
       throw new Error(`Museum with id ${museumId} not found`);

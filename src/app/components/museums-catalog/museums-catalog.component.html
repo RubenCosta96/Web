@@ -2,13 +2,11 @@
   <div class="card" *ngFor="let museum of museums">
     <h4>{{ museum.name }}</h4>
     <img [src]="museum.images[0]" alt="" />
-    <button class="btn-open-museum">
+    <button class="btn-open-museum" [routerLink]="['/museum/' + museum.key]">
       <a href="#">Abrir Museu</a>
     </button>
   </div>
 </div>
-
-
 
 
 <!-- Codigo Teste -->
